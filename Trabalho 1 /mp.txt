@@ -3,12 +3,13 @@ Manual do Programador
 O analisador léxico verifica o código fonte e classica em tokens e lexemas. 
 Neste manual é explicado como utilizar o analisador implementado. 
 
-1) Crie um arquivo fonte em C-- para ser analisado pelo programa anaLexic.c 
+1) Lista de tokens utilizado com descrição e explicação 
 
-Exemplo de aquivo testato ou utilizado
+2) Diagramas de transição implementados.  
 
-2) Depois execute o seguinte comando 
+3) Técnicas que foram utilizadas
+Refatoração
+Eliminação de recursividade
+Análise do primeiro símbolo
 
-Exemplo de saída depois de executar o comando
-
-3) Mosrtar o resultado e um arquivo de exemplo. 
+4) Lista de mensagens de erro, mensagens consistentes. 
