@@ -35,41 +35,46 @@ void analex(FILE *inputFile, FILE *outputFile) {
     while (c != '\0') {
         
         if (isalpha(c)) {
-        lexeme[i++] = c;
-        c = prox_char(inputFile);
-        while (isalnum(c)) {
             lexeme[i++] = c;
             c = prox_char(inputFile);
-        }
-        ungetc(c, inputFile);
-        lexeme[i] = '\0';
-        grava_token(ID, lexeme, outputFile);
-        i = 0;
-        } else if (isdigit(c)) {
-        lexeme[i++] = c;
-        c = prox_char(inputFile);
-        while (isdigit(c)) {
+            while (isalnum(c)) {
+                lexeme[i++] = c;
+                c = prox_char(inputFile);
+            }
+            ungetc(c, inputFile);
+            lexeme[i] = '\0';
+            grava_token(ID, lexeme, outputFile);
+            i = 0;
+        } 
+        else if (isdigit(c)) {
             lexeme[i++] = c;
             c = prox_char(inputFile);
-        }
-        ungetc(c, inputFile);
-        lexeme[i] = '\0';
-        grava_token(NUM, lexeme, outputFile);
-        i = 0;
-        } else if (ispunct(c)) {
-        lexeme[i++] = c;
-        c = prox_char(inputFile);
-        while (ispunct(c)) {
+            while (isdigit(c)) {
+                lexeme[i++] = c;
+                c = prox_char(inputFile);
+            }
+            ungetc(c, inputFile);
+            lexeme[i] = '\0';
+            grava_token(NUM, lexeme, outputFile);
+            i = 0;
+        } 
+        else if (ispunct(c)) {
             lexeme[i++] = c;
             c = prox_char(inputFile);
-        }
-        ungetc(c, inputFile);
-        lexeme[i] = '\0';
-        grava_token(SYMBOL, lexeme, outputFile);
-        i = 0;
-        } else if (isspace(c)) {
+            while (ispunct(c)) {
+                lexeme[i++] = c;
+                c = prox_char(inputFile);
+            }
+            ungetc(c, inputFile);
+            lexeme[i] = '\0';
+            grava_token(SYMBOL, lexeme, outputFile);
+            i = 0;
+        } 
+        else if (isspace(c)) {
         c = prox_char(inputFile);
-        } else {
+        } 
+        
+        else {
         printf("Invalid character: %c\n", c);
         c = prox_char(inputFile);
         }
@@ -82,7 +87,7 @@ void analex(FILE *inputFile, FILE *outputFile) {
 int main(){
 
     FILE *inputFile = fopen("input.txt", "r");
-  FILE *outputFile = fopen("output.txt", "w");
+    FILE *outputFile = fopen("output.txt", "w");
     
     if (inputFile == NULL) {
         printf("Erro ao abrir o arquivo de entrada.\n");
