@@ -1,0 +1,2 @@
+Token: 0, Lexema: paula
+Token: 2, Lexema:2 ;
