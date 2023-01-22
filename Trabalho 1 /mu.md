@@ -16,8 +16,20 @@ A função grava_token() tem como objetivo escrever no arquivo de saída informa
     
     Exemplo: code.txt
 
-2) Depois execute o seguinte comando 
+2) Depois execute o seguinte comandos:
 
-    Exemplo de saída depois de executar o comando
+        gcc o- analise anaLexic.c
 
-3) Mosrtar o resultado e um arquivo de exemplo. 
+        ./analise code.txt
+
+3) Exemplo de saída. 
+        
+        Entrada: paula = 24;
+
+        Saída: 
+
+            Token: 0, Lexema: paula
+            Token: 2, Lexema:24 ;
+
+
+## Link para o vídeo: https://youtu.be/cFlsr00fapc
